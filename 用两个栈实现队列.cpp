@@ -1,8 +1,3 @@
-#include<cstdio>
-#include<stack>
-using namespace std;
-
-
 class CQueue 
 {
 public:
