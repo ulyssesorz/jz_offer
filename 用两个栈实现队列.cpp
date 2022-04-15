@@ -8,8 +8,7 @@ class CQueue
 public:
     stack<int> stack_1,stack_2;
     CQueue() 
-    {
-    }
+    {}
     
     void appendTail(int value) 
     {
