@@ -1,5 +1,4 @@
-class Solution 
-{
+class Solution {
 private:
     stack<int> st;
 public:
@@ -8,13 +7,13 @@ public:
         ListNode* p=head;
         while(p!=NULL)
         {
-            st.push(p->val);    //结点值依次压栈
+            st.push(p->val);
             p=p->next;
         }
         vector<int> res;
         while(!st.empty())
         {   
-            res.push_back(st.top());    //依次出栈到结果数组
+            res.push_back(st.top());
             st.pop();
         }
         return res;
