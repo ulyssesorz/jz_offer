@@ -1,7 +1,3 @@
-#include<iostream>
-#include<stack>
-using namespace std;
-
 class MinStack 
 {
 private:
@@ -38,15 +34,3 @@ public:
         return st_min.top();
     }
 };
-
-int main()
-{   
-    MinStack *minStack = new MinStack();
-    minStack->push(0);
-    minStack->push(1);
-    minStack->push(0);
-    cout<<minStack->min()<<endl;   
-    minStack->pop();    
-    cout<<minStack->min()<<endl;   
-    return 0;
-}
