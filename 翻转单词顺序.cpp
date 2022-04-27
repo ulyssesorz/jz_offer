@@ -7,9 +7,9 @@ public:
                 int j=i;
                 while(i>=0 && s[i]!=' ')
                     --i;
-                res+=substr(i+1,j-i);
+                res+=s.substr(i+1,j-i)+" ";
             }
         }
-        return res;
+        return res.substr(0,res.size()-1);
     }
 };
