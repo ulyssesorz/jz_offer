@@ -12,7 +12,7 @@ public:
         while(N > 0){
             if(N & 1 == 1)  
                 res *= x;
-            x *= x;
+            x *= x;     //x的2幂次方（x^2,x^4,x^8...）
             N >>= 1;    //后移一位
         }
         return res;
