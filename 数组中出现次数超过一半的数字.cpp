@@ -7,7 +7,7 @@ public:
             if(nums[i] == major)
                 ++cnt;
             else
-                --cnt;
+                --cnt;      //抵消
             if(cnt == 0){   //切换major，重新计数
                 cnt = 1;
                 major = nums[i];
