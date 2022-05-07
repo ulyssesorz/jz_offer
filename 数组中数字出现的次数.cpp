@@ -4,12 +4,14 @@ public:
         int sum = 0;
         for(int n : nums)
             sum ^= n;
-        int flag = 1;
-        while((sum & flag) == 0)    //找到不同的那一位
-            flag <<= 1;
+        int idx = 0;
+        while((sum & 1) == 0){  //不同的位
+            ++idx;
+            sum >>= 1;
+        }
         int res1 = 0, res2 = 0;
-        for(int n :nums){   //分组，组内异或得到出现次数为1的那个数
-            if(n & flag)
+        for(int n :nums){
+            if((n >> idx & 1) == 1) //分组，组内异或
                 res1 ^= n;
             else
                 res2 ^= n;
