@@ -11,7 +11,7 @@ public:
         }
         for(int i = 0; i < 32; ++i){
             if(vec[i] % 3 != 0)         //不被3整除说明这一位是唯一的那个数的位
-                res += pow(2,31 - i);
+                res += pow(2, 31 - i);
         }
         return res;
     }
