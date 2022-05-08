@@ -1,4 +1,4 @@
-class Solution {
+class Solution {    //公式推导
 public:
     int lastRemaining(int n, int m) {
         int res = 0;
@@ -13,5 +13,21 @@ private:
         if(n == 1)
             return 0;
         return (m + func(n - 1, m)) % n;
+    }
+};
+
+class Solution {    //模拟
+public:
+    int lastRemaining(int n, int m) {
+        vector<int> circle(n);
+        for(int i = 0; i < n; ++i){
+            circle[i] = i;
+        }
+        int idx = 0;
+        while(circle.size() > 1){
+            idx = (idx + m -1) % circle.size();
+            circle.erase(circle.begin() + idx);
+        }
+        return circle[0];
     }
 };
