@@ -9,8 +9,10 @@ public:
         int i = 0;
         for(int n : pushed){    //栈顶元素和pop[i]相同则出栈，不同则入栈
             st.push(n);
-            while(!st.empty() && st.top() == popped[i++])   
+            while(!st.empty() && st.top() == popped[i]){
                 st.pop();
+                ++i;
+            }
         }
         return st.empty();
     }
