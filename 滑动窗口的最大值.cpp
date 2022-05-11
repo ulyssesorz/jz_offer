@@ -7,12 +7,13 @@ public:
         deque<int> dq;
         int i = 1 - k, j = 0;
         while(j < nums.size()){
-            if(i > 0 && dq[0] == nums[i - 1])   //删除不在窗口的左端元素
+            if(i > 0 && dq.front() == nums[i - 1])   //删除不在窗口的左端元素
                 dq.pop_front();
-            while(!dq.empty() && dq[dq.size() - 1] < nums[j])   //保持队列单调性
+            while(!dq.empty() && dq.back() < nums[j])   //保持队列单调性
                 dq.pop_back();
             dq.push_back(nums[j]);  
-1
+            if(i >= 0)
+                res.push_back(dq[0]);
             ++i;
             ++j;
         }
