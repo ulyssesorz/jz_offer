@@ -6,7 +6,7 @@ public:
     
     int max_value() {
         if(!dq.empty())
-            return dq[0];
+            return dq.front();
         return -1;
     }
     
