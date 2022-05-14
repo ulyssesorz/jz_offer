@@ -2,9 +2,6 @@ class Solution {
 public:
     int reversePairs(vector<int>& nums) {
         vector<int> tmp(nums.size());
-        for(int i = 0; i < nums.size(); ++i){
-            tmp[i] = nums[i];
-        }
         return mergeSort(nums, tmp, 0, nums.size() - 1);
     }
 private:
@@ -13,7 +10,7 @@ private:
             return 0;
         int mid = low + (high - low) / 2;
         int res = mergeSort(nums, tmp, low, mid) + mergeSort(nums, tmp, mid + 1, high);
-        for(int i = 0; i < nums.size(); ++i){
+        for(int i = low; i <= high; ++i){
             tmp[i] = nums[i];
         }
         int i = low, j = mid + 1, k = low;
